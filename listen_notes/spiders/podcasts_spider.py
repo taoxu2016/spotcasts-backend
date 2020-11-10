@@ -3,12 +3,12 @@ import scrapy
 class PodcastsSpider(scrapy.Spider):
     name = "podcasts"
 
-    def __init__(self, name):
+    def __init__(self, name="syntax-tasty-web-development-treats-wes-bos-HBLGrV82oAs"):
         self.start_urls = [f'https://www.listennotes.com/podcasts/{name}/']
 
     def parse(self, response):
         uuid = response.css('#channel-toolbar::attr(data-channel-uuid)').get()
-        text = response.xpath('//h1/a/text()').get()
+        title = response.xpath('//h1/a/text()').get()
         host = response.css('.ln-channel-header-subtitle a::text').get()
         thumbnail = response.css('.ln-channel-header-card a::attr(href)').get()
         description = response.css('.ln-channel-episode-description-text::text').get().strip()
@@ -37,7 +37,7 @@ class PodcastsSpider(scrapy.Spider):
 
         yield {
             'uuid': uuid,
-            'text': text,
+            'title': title,
             'host': host,
             'thumbnail': thumbnail,
             'description': description,

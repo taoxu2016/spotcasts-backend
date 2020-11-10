@@ -18,8 +18,8 @@ class PodcastsCollection(scrapy.Spider):
             data["author"] = card.css(".ln-channel-episode-card-info-subtitle::attr(title)").get()
 
             data["latest_episode"] = {
-                "title": card.css(".ln-channel-episode-card-info-title a::text").get().strip(),
-                "episode_link": card.css(".ln-channel-episode-card-info-title a::attr(href)").get(),
+                "title": card.css(".ln-channel-episode-card-body .ln-channel-episode-card-info-title a::text").get().strip(),
+                "episode_link": card.css(".ln-channel-episode-card-body .ln-channel-episode-card-info-title a::attr(href)").get(),
                 "published": card.css(".ln-channel-episode-card-info-subtitle time::text").get().strip(),
                 "duration": card.css(".ln-episode-timestamp::text").get().strip(),
             }

@@ -8,9 +8,11 @@ class PodcastsSpider(scrapy.Spider):
 
     def parse(self, response):
         episode_audio = response.css("#episode-play-button-toolbar::attr(data-audio)").get()
+        episode_uuid = response.css("#episode-play-button-toolbar::attr(data-episode-uuid)").get()
         show_notes = response.css(".ln-channel-episode-description-text").extract()
 
         yield {
             'episode_audio': episode_audio,
+            'episode_uuid': episode_uuid,
             'show_notes': show_notes
         }

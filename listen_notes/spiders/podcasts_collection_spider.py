@@ -20,6 +20,7 @@ class PodcastsCollection(scrapy.Spider):
             data["latest_episode"] = {
                 "title": card.css(".ln-channel-episode-card-body .ln-channel-episode-card-info-title a::text").get().strip(),
                 "episode_link": card.css(".ln-channel-episode-card-body .ln-channel-episode-card-info-title a::attr(href)").get(),
+                "id": card.css("div[data-type='episode-audio-player']::attr(data-episode-uuid)").get(),
                 "published": card.css(".ln-channel-episode-card-info-subtitle time::text").get().strip(),
                 "duration": card.css(".ln-episode-timestamp::text").get().strip(),
             }

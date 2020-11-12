@@ -1,6 +1,6 @@
 # SpotCasts - Backend
 
-SpotCasts - listen to podcasts, subscribe to podcasts, save individual episodes. Built with scrapy and scrapyrt. This is the backend repository, click [here](https://github.com/manikandanraji/spotcasts-backend) to visit the frontend repo.
+SpotCasts - listen to podcasts, subscribe to podcasts, save individual episodes. Built with scrapy and scrapyrt. This is the backend repository, click [here](https://github.com/manikandanraji/spotcasts-frontend) to visit the frontend repo.
 
 ## Running locally
 
@@ -19,6 +19,10 @@ scrapyrt
 3. Save podcasts 
 4. Subscribe to podcasts
 5. Access podcasts by categories
+
+## Watch the demo
+
+[![Video](screenshots/home_player.png)](https://www.youtube.com/watch?v=19W8O-tX6cw "SpotCasts Demo")
 
 ## UI
 

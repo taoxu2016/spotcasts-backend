@@ -39,3 +39,6 @@ scrapyrt
 
 ### Player #2
 ![Player #2](screenshots/home_player.png)
+
+### Player #3
+![Player #3](screenshots/home_player2.png)
